@@ -6,10 +6,13 @@ from pyrogram.types import (
 from utiles.filters import platform_filter
 from methods import TgParseHub
 from utiles.utile import progress
-
+from config.config import bot_cfg
 
 @Client.on_message(filters.text & platform_filter)
 async def call_parse(cli: Client, msg: Message):
+    # 添加权限检查
+    if msg.from_user.id not in bot_cfg.allowed_users:
+        return
     try:
         tph = TgParseHub()
         t = (

@@ -13,6 +13,7 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "telegraph>=2.2.0",
     "tgcrypto>=1.2.5",
+    "telethon",
 ]
 
 [tool.uv.sources]
